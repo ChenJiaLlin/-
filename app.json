@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/setting/setting",
+    "pages/timer_index/index",
+    "pages/timer_setting/setting",
+    "pages/timer/timer"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#888888",
+    "navigationBarTitleText": "催促者",
+    "navigationBarTextStyle": "white",
+    "backgroundColor":"#888888",
+    "borderStyle": "white",
+    "backgroundColorTop":"#888888",
+    "backgroundColorBottom":"#888888",
+    "enablePullDownRefresh":true
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar":{
+     "list":[
+       {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"pages/images/bar_home.png",
+        "selectedIconPath":"pages/images/bar_home_black.png"
+       },
+       {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "pages/images/wechat.png",
+        "selectedIconPath": "pages/images/wechatHL.png",
+        "text": "记录"
+      },
+       {
+         "pagePath":"pages/timer_setting/setting",
+         "text":"设置",
+         "iconPath":"pages/images/小人_白.jpg",
+         "selectedIconPath":"pages/images/小人_黑.jpg"
+       }
+     ]
+  }
+}

@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view >
+  <view class="first">
+    <!-- 判断是否有用户信息并且当前版本能够调用，其中bindgetuserinfo当用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与wx.getUserInfo返回的一致，open-type="getUserInfo"时有效 -->
+    <button class='userinfo-get' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像及昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- <view class="userinfo">
+   <button class="one" bindtap="TZ">跳转news页面</button> 
+   <button class="one" bindtap="TZ">跳转news页面</button> 
+  </view> -->
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+ <view class="input-wrap">    
+      <input type="text" value='{{curIpt}}' returnKeyType='send' placeholder="请输入待做的事" class="ipt-main"  bindinput='iptChange' />     
+      <view class="flex-row flex-time" wx:if="{{curIpt}}">
+            <picker mode="time" range='{{curRange}}' bindchange='beginChange'  class="pick-time time">
+                <text>
+                    开始时间：{{startTime}}        <!--{{curRange[curBegin]}} -->
+                </text>
+            </picker> 
+            <picker mode="time" range='{{curRange}}'  bindchange='finishChange'  class="pick-time time">
+                <text>
+                    结束时间：{{endTime}}          <!--{{curRange[curFinish]}}-->
+                </text>
+            </picker>  
+            <label class="time"><switch class="switch" checked bindchange="switch1Change" />提醒</label>
+      </view>
+      <view class="flex-row" wx:if="{{curIpt}}">        
+          <button class="btn btn-submit" formType="submit" hover-class="btn-hover">提交</button>
+          <button class="btn btn-cancel" formType="reset">清空</button>
+      </view>
+  </view>
+  </form>
+  <view class="list-wrap" wx:if="{{lists.length>0}}">
+    <view wx:for="{{lists}}" wx:if="{{showAll ||(!showAll && !item.done)}}" id="{{item.id}}" class="{{item.done?'done list':'list'}}">        
+        <text bindtap='TZ' class='one'>☛ {{index+1}}</text>
+        <text data-id ="{{index}}"  class="cnt" bindtap="toChange" > {{item.content}}</text>
+        <!-- <button class='xiugai' bindtap='toChange'>xiugai</button> -->
+        <view hidden="{{!item.editing}}" class="edit-wrap">
+            <input class="ipt-edit" value="{{item.content}}"  data-id="{{index}}" bindinput='iptEdit' />
+            <button class="btn btn-edit" data-id="{{index}}" bindtap="saveEdit">确定</button>
+        </view>
+        
+        <text class="time"> {{item.beginTime}}-{{item.finishTime}}</text>
+        <icon class="ico-done" bindtap="setDone" data-id="{{index}}" type="success_no_circle" size='18' color="{{item.done?'#d7d7d7':'#6fa6cf'}}" />
+        <icon class="ico-delete" bindtap="toDelete" data-id="{{index}}" type='cancel' size='20' color="#6fa6cf" />
+    </view>
+    <view class="footer">
+        <view class="ft-area">
+            <text>{{lists.length}}条</text>
+        </view>
+         <view class="ft-area ft-mid">
+            <text wx:if="{{showAll}}" bindtap="showUnfinished" class="ft-action">显示未完成</text>
+            <text wx:else bindtap="showAll" class="ft-action">显示全部</text>
+        </view>
+        <view class="ft-area">
+            <text bindtap="doneAll" class="ft-action">全部完成</text>
+            <text bindtap="deleteAll" class="ft-action">全删</text>
+        </view>
+    </view>
+  </view>
+  <view class="input-wrap mt" wx:if="{{lists.length>0}}">
+    <button class="btn btn-save" bindtap="saveData">保存数据</button>
+  </view>
+
+</view>
+
