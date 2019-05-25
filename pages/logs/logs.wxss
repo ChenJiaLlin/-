@@ -13,12 +13,40 @@
 	padding-right: 20px;
 }
 .clear{
-	position: absolute;
+	position: absolute; /*absolute    
+生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。*/
 	bottom: 0px;
 	width: 100%;
 }
-.clear .clear_btn {
-	margin: 10px;
+
+/*
+区分margin-left与left:
+        在有定位声明的情况下：即position:absolute,relative,fixed这几种情况下
+        1、只有margin-left：这样子position的声明没有任何作用，因为即使声明了，也得靠left,top来调整位置，如果没有left等，则position失效，元素位置仍为其该在的位置，margin-left还是相对于其父元素的距离
+        2、只有left等：正常情况
+        3、同时有margin-left和left：这种情况下，定位是有作用的，在定位完成后margin-left再起作用，即margin-left和left是可以叠加的
+*/
+
+.clear_btn {
+  bottom: 12px;
+  right: 10px;
+	width: 35%;
+  position: fixed; /*fixed   
+生成绝对定位的元素，相对于浏览器窗口进行定位。 */
+	height: 35px;
+	line-height: 35px;
+	color:#fff;
+	background-color: #fd8f58;
+	border-radius: 2px;
+  box-shadow: 4px 6px 2px #cccccc;
+}
+
+.clear_btn_hover{
+  bottom: 11px;
+  right: 8px;
+	width: 35%;
+  position: fixed; /*fixed   
+生成绝对定位的元素，相对于浏览器窗口进行定位。 */
 	height: 35px;
 	line-height: 35px;
 	color:#fff;

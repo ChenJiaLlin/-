@@ -19,10 +19,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    register:false,
+    register: true,
     curIpt: '',
     showAll: true,
     lists: [],
+    data:[],
     curRange: [],
     curBegin: 0,
     curFinish: 1,
@@ -38,7 +39,7 @@ Page({
   },
   TZ:function(){
     wx.navigateTo({
-      url: '../timer/timer',
+      url: '../timer_index/index',
     })
   },
 

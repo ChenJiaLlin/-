@@ -26,20 +26,20 @@
        {
         "pagePath":"pages/index/index",
         "text":"首页",
-        "iconPath":"pages/images/bar_home.png",
-        "selectedIconPath":"pages/images/bar_home_black.png"
+        "iconPath":"pages/images/小人_白.jpg",
+        "selectedIconPath":"pages/images/小人_黑.jpg"
        },
        {
         "pagePath": "pages/logs/logs",
-        "iconPath": "pages/images/wechat.png",
-        "selectedIconPath": "pages/images/wechatHL.png",
+        "iconPath": "pages/images/书签.png",
+        "selectedIconPath": "pages/images/书签-黑.png",
         "text": "记录"
       },
        {
          "pagePath":"pages/timer_setting/setting",
-         "text":"设置",
-         "iconPath":"pages/images/小人_白.jpg",
-         "selectedIconPath":"pages/images/小人_黑.jpg"
+         "text":"说明",
+         "iconPath":"pages/images/100.png",
+         "selectedIconPath":"pages/images/100_黑.png"
        }
      ]
   }

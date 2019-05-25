@@ -5,7 +5,7 @@
         range="{{array}}" bindchange="bindPickerChange">
         <view class="picker">
           {{array[index]}}
-          <image src="/images/ic_triangle.png" class="triangle"></image>
+          <!-- <image src="/images/ic_triangle.png" class="triangle"></image> -->
         </view>
       </picker>
       <input class="input phone" name="mobile" value="{{mobile}}" placeholder="手机号"

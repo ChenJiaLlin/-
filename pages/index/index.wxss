@@ -39,8 +39,8 @@
 .one {
   /* margin-top: 20rpx; */
   font-size: 40rpx;
+  font-weight: 900;
   color:rgb(0, 225, 255);
-  background-color:white;
   border:3rpx ;
   border-color:aqua tan steelblue slategrey;
 } 
@@ -128,12 +128,13 @@ button::content{
 }
 
 .ipt-main{
+  margin-left: 30rpx;
   border: 1rpx solid #eee;
   border-radius: 5px;
   height: 80rpx;
   padding: 10rpx 15px;
   font-size: 30rpx;
-  width: 610rpx;
+  width: 600rpx;
   display: block;
 }
 
@@ -259,4 +260,18 @@ button::content{
 .btn-save{
   width:300rpx;
   color: #fff;
+}
+.btn-save-hover{
+  border-radius: 5px;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  display: block;
+  background: #6fa6cf;
+
+  width:300rpx;
+  color: #fff;
+  
+  left: 6rpx;/*按下按钮时，在当前位置上 离左边距离多6rpx*/
+  top: 6rpx;
+  
 }
