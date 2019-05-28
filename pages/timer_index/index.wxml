@@ -1,24 +1,63 @@
 <view class="container timer {{isRuning ? 'timer--runing': ''}}">
+<view class="test-bg">
+  <image src="/pages/images/background_yellow.jpg" class="bg-image" mode="scaleToFill"></image>
+</view>
+
 	<view class="timer_main">
 		 <view class="timer_time-wrap">
 		 		<view class="timer_progress_mask"></view>
 		 		<view class="timer_progress timer_left">
 		 			<view class="timer_circle timer_circle--left" style="transform: rotate({{leftDeg}}deg);"></view>
 		 		</view>
-		 		<view class="timer_progress timer_right">
+		 		<view class="timer_progress timer_right" >
 		 			<view class="timer_circle timer_circle--right" style="transform: rotate({{rightDeg}}deg);"></view>
 		 		</view>
-			 	<text wx:if="{{!completed}}" class="timer_time">{{remainTimeText}}</text>
+        <!-- <text bindtap='r' class="timer_time">{{remainTimeText}}</text> -->
+			 	<button wx:if="{{!completed}}"  bindtap="changePicker" class="btn">
+         <text class="timer_time">{{remainTimeText}}</text></button>
+        
+        <!-- 滚动条 -->
+       
+           <!-- <view>{{year}}年{{month}}月{{day}}日</view> -->
+            <picker-view
+                bindtap='changePicker'
+                hidden="{{isPicker}}"
+                mask-class='picker_main'
+                class='picker_main'
+                indicator-class="picker"
+                indicator-style="height: 50px;" 
+                style="width: 100%; height: 230rpx;"
+             
+                value="{{v}}"
+                bindchange="changeWorkTime"
+              >
+            <picker-view-column >
+              <view wx:for="{{keepTimeList}}" style="line-height: 70rpx"><text class="text">{{item}}:00</text></view>
+            </picker-view-column>
+          </picker-view>
+        <!-- 工作中和已完成的文本       -->
 			 	<text 
 			 		wx:if="{{isRuning}}" 
 			 		animation="{{nameAnimation}}" 
 			 		class="timer_taskName">{{taskName}}{{completed ? '已完成！' : '中'}}</text>
 		 		<image 
-		 			wx:if="{{completed}}" 
+         wx:if="{{completed}}" 
 		 			class="timer_done" 
 		 			src="../image/complete.png"></image>
 		 </view>
-		 <input 
+		
+    <view class="section panel">
+      <view class="section_title">
+        <switch class="section_check" type="checkbox" size="mini" checked bindchange="switch1Change"/>
+        <text>启用铃声</text>
+      </view>
+      <view class="section_body">
+        <text bindtab="" class="section_tip">选择铃声 > </text>
+      </view>
+	  </view>
+    
+  
+     <input 
 		 	type="text" 
 		 	placeholder-style="text-align:center" 
 		 	class="timer_inputname" 
@@ -27,15 +66,21 @@
 	</view>
 	
 	<view class="timer_footer">
-	  <view 
+	  <view
+      style='opacity:{{1}}'
 	  	bindtap="startTimer" 
 	  	data-type="work" 
-	  	class="timer_ctrl {{isRuning && timerType == 'rest' ? 'hide' : ''}}" >{{isRuning ? '完成': '工作'}}</view>
+	  	class="timer_ctrl {{isRuning && timerType == 'rest' ? 'hide' : ''}}" >
+      <image style='opacity:{{1}}' mode='scaleToFill' src="https://img.icons8.com/small/16/000000/cave.png" plain="{{plain}}" class='imagework'></image>
+      {{isRuning ? '完成': '工作'}}</view>
 
 	  <view 
 	  	bindtap="startTimer" 
 	  	data-type="rest" 
-	  	class="timer_ctrl {{isRuning && timerType == 'work' ? 'hide' : ''}}" >{{isRuning ? '完成': '休息'}}</view>
+	  	class="timer_ctrl {{isRuning && timerType == 'work' ? 'hide' : ''}}" >
+      <image mode='scaleToFill' src="https://img.icons8.com/color/48/000000/delete-sign.png" plain='true' class='imagerest'></image>
+      {{isRuning ? '完成': '休息'}}
+      </view>
 	</view>
 </view>
 
