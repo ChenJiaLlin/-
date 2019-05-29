@@ -12,7 +12,6 @@
   border-radius: 50%;
   background-color:#00BFFF;
 }
-
 .first{
   display: flex;
   width: 100%;

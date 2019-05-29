@@ -4,10 +4,7 @@
     "pages/logs/logs",
     "pages/login/login",
     "pages/register/register",
-    "pages/setting/setting",
-    "pages/timer_index/index",
-    "pages/timer_setting/setting",
-    "pages/timer/timer"
+    "pages/timer_index/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -34,13 +31,8 @@
         "iconPath": "pages/images/书签.png",
         "selectedIconPath": "pages/images/书签-黑.png",
         "text": "记录"
-      },
-       {
-         "pagePath":"pages/timer_setting/setting",
-         "text":"说明",
-         "iconPath":"pages/images/100.png",
-         "selectedIconPath":"pages/images/100_黑.png"
-       }
+      }
+
      ]
   }
 }
