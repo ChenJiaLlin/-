@@ -90,7 +90,7 @@ button::content{
 }
 .flex-row{
   display: flex;
-  margin: 10rpx 0;
+  margin: 8rpx 25rpx;
   width: 670rpx;
   -webkit-box-pack: justify;
 }

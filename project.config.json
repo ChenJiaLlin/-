@@ -6,15 +6,23 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
-		"uglifyFileName": true,
-		"checkInvalidKey": true
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.0.4",
 	"appid": "wx5ab1686d07ef6f30",
 	"projectname": "test",
 	"debugOptions": {
