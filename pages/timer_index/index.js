@@ -35,7 +35,7 @@ Page({
     poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
     name: '此时此刻',
     author: '许巍',
-    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+    src: 'http://dl.stream.qqmusic.qq.com/M500003OHEyE0KsfOJ.mp3?vkey=267E4D1D6DB9FEC99223F424A0D32779C461F04DF0B43F69CF5C7AE1BE5148311DD2457EB8E754B5AFFE1CD3C24C7881D68065214C3A26E6&guid=5150825362&fromtag=1',
   },
 
 
@@ -127,7 +127,7 @@ Page({
   updateTimer: function() {
     let log = this.data.log //获取日志信息
     let now = Date.now()  //获取当前时间
-    //用当前时间-结束时间=剩余时间
+    //用结束时间-当前时间=剩余时间
     let remainingTime = Math.round((log.endTime - now) / 1000)  
     let H = util.format_Time(Math.floor(remainingTime / (60 * 60)) % 24, 'HH')
     let M = util.format_Time(Math.floor(remainingTime / (60)) % 60, 'MM')
@@ -145,6 +145,7 @@ Page({
         completed: true
       })
       this.stopTimer()
+      this.audioCtx.pause()
       return
     }
 

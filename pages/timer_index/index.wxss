@@ -86,7 +86,7 @@
 
 .btn{
   border: 0 ;
-  opacity: 0.3;
+  opacity: 0.8;
   background: none;
 }
 .btn::after{
@@ -94,6 +94,7 @@
 }
 
 .timer_time {
+  opacity: 1;
   font-size: 80rpx;
   color: #fff;
   font-weight: 900;
@@ -104,16 +105,16 @@
   font-size: 50rpx;
   color: ghostwhite;
   font-weight: 900;
-  opacity: 0.5;
+  opacity: 0.8;
   transition: font-size .3s;
 }
 .picker_main{
-  opacity: 0.5;
+  opacity: 1;
   margin-left: 80rpx;
   left: 110rpx;
 }
 .picker{
-   opacity:0.1;
+   opacity:1;
 }
 
 .timer_taskName {

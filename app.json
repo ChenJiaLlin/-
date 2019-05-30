@@ -9,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#888888",
-    "navigationBarTitleText": "催促者",
+    "navigationBarTitleText": "专注Plan",
     "navigationBarTextStyle": "white",
     "backgroundColor":"#888888",
     "borderStyle": "white",
@@ -23,13 +23,13 @@
        {
         "pagePath":"pages/index/index",
         "text":"首页",
-        "iconPath":"pages/images/小人_白.jpg",
-        "selectedIconPath":"pages/images/小人_黑.jpg"
+        "iconPath":"pages/images/house.png",
+        "selectedIconPath":"pages/images/openhouse.png"
        },
        {
         "pagePath": "pages/logs/logs",
-        "iconPath": "pages/images/书签.png",
-        "selectedIconPath": "pages/images/书签-黑.png",
+        "iconPath": "pages/images/ben1.png",
+        "selectedIconPath": "pages/images/ben.png",
         "text": "记录"
       }
 

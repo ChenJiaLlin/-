@@ -1,6 +1,6 @@
 <view class="container timer {{isRuning ? 'timer--runing': ''}}">
 <view class="test-bg">
-  <image src="/pages/images/首页图片.jpg" class="bg-image" mode="scaleToFill"></image>
+  <image src="/pages/images/background_color.jpg" class="bg-image" mode="scaleToFill"></image>
 </view>
 
 	<view class="timer_main">
@@ -18,7 +18,6 @@
         
         <!-- 滚动条 -->
        
-           <!-- <view>{{year}}年{{month}}月{{day}}日</view> -->
             <picker-view
                 bindtap='changePicker'
                 hidden="{{isPicker}}"
@@ -49,7 +48,7 @@
 	<!-- 音乐 -->
   
   <view>
-    <audio class='intro' poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop bindplay="funplay" bindpause="funpause" bindtimeupdate="funtimeupdate" bindended="funended" binderror="funerror"></audio>
+    <audio class='intro' poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop='true' bindplay="funplay" bindpause="funpause" bindtimeupdate="funtimeupdate" bindended="funended" binderror="funerror"></audio>
   </view>
 
   <input 
@@ -73,7 +72,7 @@
 	  	bindtap="startTimer" 
 	  	data-type="rest" 
 	  	class="timer_ctrl {{isRuning && timerType == 'work' ? 'hide' : ''}}" >
-      <image mode='scaleToFill' src="https://img.icons8.com/color/48/000000/delete-sign.png" plain='true' class='imagerest'></image>
+      <image mode='scaleToFill' src="https://img.icons8.com/color/48/000000/sleep.png" plain='true' class='imagerest'></image>
       {{isRuning ? '完成': '休息'}}
       </view>
 	</view>

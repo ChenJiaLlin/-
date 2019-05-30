@@ -25,7 +25,10 @@
 <block wx:else>
 	<view class="nodata">
 		<image class="nodata_img" src="../images/nodata.png"></image>
-		<text class="nodata_text">暂无记录</text>
 	</view>
+  <view><text class="nodata_text">暂无记录</text></view>
+  
+  <view><text class="nodata_tip">和我有关的记录都会出现在这里哦</text></view>
+  
 </block>
 <toast hidden="{{toastHidden}}" bindchange="hideToast">清除成功！</toast>

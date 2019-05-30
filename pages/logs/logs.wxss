@@ -53,3 +53,22 @@
 	background-color: #fd8f58;
 	border-radius: 2px;
 }
+
+.nodata_img{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 270rpx;
+  margin-left: 300rpx;
+}
+
+.nodata_text{
+  color: gray;
+  margin-left: 310rpx; 
+}
+
+.nodata_tip{
+  color: rgb(168, 164, 164);
+  margin-top: 12rpx;
+  font-size: 30rpx;
+  margin-left: 150rpx;
+}
