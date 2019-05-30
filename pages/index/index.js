@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var api = require('../../utils/api.js')
+// var api = require('../../utils/api.js')
 var util = require('../../utils/util.js')
 var dataUrl = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
 
@@ -105,17 +105,17 @@ Page({
     })
   },
 
-  bindGetVerification() {
-    let that = this
-    api.post(api.GET_VERIFICATION, {
-      area: parseInt(this.data.arrayNum[this.data.index]),
-      mobile: parseInt(this.data.mobile),
-      type: 'sign'
-    }).then(res => {
-      console.log(res)
-      // 后台验证了来源，故无法获取正确返回
-    })
-  },
+  // bindGetVerification() {
+  //   let that = this
+  //   api.post(api.GET_VERIFICATION, {
+  //     area: parseInt(this.data.arrayNum[this.data.index]),
+  //     mobile: parseInt(this.data.mobile),
+  //     type: 'sign'
+  //   }).then(res => {
+  //     console.log(res)
+  //     // 后台验证了来源，故无法获取正确返回
+  //   })
+  // },
 
 
 // 下面是首页框的函数
@@ -230,8 +230,5 @@ Page({
       data: listsArr
     })
   }
-
-
-
 
 })

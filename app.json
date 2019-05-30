@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/login/login",
-    "pages/register/register",
-    "pages/timer_index/index"
+      "pages/index/index",
+      "pages/login/login",
+      "pages/logs/logs",
+      "pages/register/register",
+      "pages/timer_index/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
