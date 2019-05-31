@@ -26,7 +26,7 @@
                 indicator-class="picker"
                 indicator-style="height: 50px;" 
                 style="width: 100%; height: 230rpx;"
-             
+
                 value="{{v}}"
                 bindchange="changeWorkTime"
               >

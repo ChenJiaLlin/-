@@ -30,6 +30,7 @@ Page({
     leftDeg: initDeg.left,
     rightDeg: initDeg.right,
     isPicker:true,
+    isClick:false,
     v:[1],
 
     poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
@@ -51,19 +52,34 @@ Page({
     })
   },
 
+
   changeWorkTime: function (e) {
     console.log(e.detail.value[0]),
     wx.setStorage({
       key: 'workTime',
       data: this.data.keepTimeList[e.detail.value[0]]
     })
+    // this.setData({
+    //   isClick:true
+    // })
+    console.log(this.data.keepTimeList[e.detail.value[0]])
+    this.data["workTime"] = this.data.keepTimeList[e.detail.value[0]] //将滚动条选中的数据传给data["workTime"]
+    console.log("当前设置的时间为："+this.data["workTime"])
   },
 
+
   startTimer: function(e) {
+ 
+    this.setData({
+      isPicker: true,
+      //completed: true
+    })
+  
     let startTime = Date.now()
     let isRuning = this.data.isRuning
     let timerType = e.target.dataset.type
-    console.log(e.target.dataset.type)
+    // console.log(e.target.dataset.type)
+    // console.log(this.data)
     let showTime = this.data["workTime"]
     let keepTime = showTime * 60 * 1000
     let logName = this.logName || defaultLogName[timerType]
@@ -176,7 +192,7 @@ Page({
   },
 
   changePicker:function(){
-    if(this.data.isPicker){
+    if (this.data.isPicker && !this.data.isRuning){
         this.setData({
         isPicker:false,
         completed:true
